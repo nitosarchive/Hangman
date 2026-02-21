@@ -1,0 +1,24 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  background: rgb(10, 10, 10);
+  justify-content: center;
+  align-items: center;
+}
+
+.key {
+  padding: 1em;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+}
