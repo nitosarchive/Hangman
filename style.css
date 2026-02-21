@@ -14,6 +14,18 @@ body {
   align-items: center;
 }
 
+.lives {
+  display: flex;
+  gap: 0.3em;
+  justify-content: center;
+  margin-block-end: 1rem;
+}
+
+.heart {
+  max-width: 30px;
+  aspect-ratio: 1/1;
+}
+
 .key {
   padding: 1em;
 }
