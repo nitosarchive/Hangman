@@ -7,12 +7,18 @@ document.addEventListener("click", () => {
   randWord = randWord.split("");
 
   let array = randWord.map((value) => {
-    return `<span id="${value}" ></span>`;
+    return `<span id="${value}" class="concealed" ></span>`;
   });
 
   let fullHtml = array.join("");
   letterContainer.innerHTML = fullHtml;
+});
+
+document.addEventListener("keyup", (e) => {
   letterContainer.querySelectorAll("span").forEach((word) => {
-    word.classList.add("concealed");
+    if (word.id === e.key) {
+      word.classList.remove("concealed");
+      word.innerText = e.key;
+    }
   });
 });

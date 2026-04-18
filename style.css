@@ -35,12 +35,13 @@ span.concealed {
   width: 20px;
   height: 3px;
   background: grey;
-  text-align: center;
 }
 
 .letter-container {
   display: flex;
   margin-block-end: 1em;
+  align-items: flex-end;
+  font-size: 1.5rem;
   gap: 1em;
 }
 
