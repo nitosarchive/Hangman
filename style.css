@@ -12,6 +12,7 @@ body {
   background: rgb(10, 10, 10);
   justify-content: center;
   align-items: center;
+  color: white;
 }
 
 .lives {
@@ -28,6 +29,19 @@ body {
 
 .key {
   padding: 1em;
+}
+
+span.concealed {
+  width: 10px;
+  height: 10px;
+  background: grey;
+  text-align: center;
+}
+
+.letter-container {
+  display: flex;
+  margin-block-end: 1em;
+  gap: 1em;
 }
 
 .keyboard-row {
