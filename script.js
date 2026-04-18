@@ -7,7 +7,7 @@ document.addEventListener("click", () => {
   randWord = randWord.split("");
 
   let array = randWord.map((value) => {
-    return `<span class ="${value}"></span>`;
+    return `<span id="${value}" ></span>`;
   });
 
   let fullHtml = array.join("");
