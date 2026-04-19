@@ -1,8 +1,10 @@
 let words = ["letter", "music", "craft"];
 const letterContainer = document.getElementById("letter-box");
+const lives = document.querySelector(".lives");
+let randWord;
 
 document.addEventListener("click", () => {
-  let randWord = words[Math.floor(Math.random() * words.length)];
+  randWord = words[Math.floor(Math.random() * words.length)];
 
   randWord = randWord.split("");
 
@@ -21,4 +23,9 @@ document.addEventListener("keyup", (e) => {
       word.innerText = e.key;
     }
   });
+
+  if (!randWord.includes(e.key)) {
+    const hearts = document.querySelector(".heart");
+    hearts.remove();
+  }
 });
