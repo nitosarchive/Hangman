@@ -1,6 +1,7 @@
 let words = ["letter", "music", "craft"];
 const letterContainer = document.getElementById("letter-box");
 const lives = document.querySelector(".lives");
+let scoreTally = 0;
 let randWord;
 
 document.addEventListener("click", () => {
@@ -20,6 +21,9 @@ document.addEventListener("keyup", (e) => {
   letterContainer.querySelectorAll("span").forEach((word) => {
     if (word.id === e.key) {
       word.classList.remove("concealed");
+      scoreTally = scoreTally + 10;
+
+      document.getElementById("score").innerText = scoreTally;
       word.innerText = e.key;
     }
   });
