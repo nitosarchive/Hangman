@@ -8,6 +8,7 @@ const restart = document.getElementById("restart");
 let hearts;
 const alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
+
 function fetchGame (){
   randWord = words[Math.floor(Math.random() * words.length)];
   document.querySelector(".intro-container").classList.add("hidden");
@@ -22,16 +23,14 @@ function fetchGame (){
     hearts.remove();
   })
 
-  console.log(hearts)
 
-  if(hearts === undefined){
     for (let i=0; i<3; i++) { 
     const heartImg = document.createElement("img");
     heartImg.src = "./imgs/heart-png-38780.png";
     heartImg.classList.add("heart");
     lives.appendChild(heartImg);
 
-} 
+
 
 }
   let fullHtml = array.join("");
@@ -49,7 +48,7 @@ document.addEventListener("keyup", (e) => {
     if (word.id === e.key) {
       word.classList.remove("concealed");
       scoreTally = scoreTally + 10;
-
+      
       document.getElementById("score").innerText = scoreTally;
       word.innerText = e.key;
     }
@@ -57,8 +56,10 @@ document.addEventListener("keyup", (e) => {
 
   if (!randWord.includes(e.key)) {
     hearts = document.querySelector(".heart");
+  
     if (!hearts) return;
     hearts.remove();
+ 
   }
 });
 
