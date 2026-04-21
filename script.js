@@ -5,9 +5,11 @@ let scoreTally = 0;
 let randWord;
 const gameStart = document.getElementById("game-start");
 const restart = document.getElementById("restart");
+let hearts;
+
 
 function fetchGame (){
-    randWord = words[Math.floor(Math.random() * words.length)];
+  randWord = words[Math.floor(Math.random() * words.length)];
   gameStart.classList.add("hidden")
   randWord = randWord.split("");
 
@@ -15,15 +17,20 @@ function fetchGame (){
     return `<span id="${value}" class="concealed" ></span>`;
   });
 
-  
-for (let i=0; i<3; i++) {
-const hearts = document.createElement("img");
-console.log(hearts);
-hearts.src = "./imgs/heart-png-38780.png";
-hearts.classList.add("heart")
-lives.appendChild(hearts)
-}
+  document.querySelectorAll(".heart").forEach((hearts)=>{
+    hearts.remove();
+  })
 
+  if(!hearts){
+    for (let i=0; i<3; i++) { 
+    const heartImg = document.createElement("img");
+    heartImg.src = "./imgs/heart-png-38780.png";
+    heartImg.classList.add("heart");
+    lives.appendChild(heartImg);
+
+} 
+
+}
   let fullHtml = array.join("");
   letterContainer.innerHTML = fullHtml;
 }
@@ -44,7 +51,7 @@ document.addEventListener("keyup", (e) => {
   });
 
   if (!randWord.includes(e.key)) {
-    const hearts = document.querySelector(".heart");
+    hearts = document.querySelector(".heart");
     if (!hearts) return;
     hearts.remove();
   }
