@@ -6,12 +6,72 @@
   box-sizing: border-box;
 }
 
+@font-face{
+  font-family: "Rubik";
+  src: url("./Rubik/Rubik-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face{
+  font-family: "Rubik";
+  src: url("./Rubik/Rubik-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+}
+
+
+
+
 body {
   display: flex;
   height: 100vh;
-
+  font-family: "Rubik";
   justify-content: center;
   align-items: center;
+}
+
+h1{
+  font-weight: 600;
+}
+
+
+button{
+  font: inherit;
+  border: none;
+  background : none;
+  cursor: pointer;
+}
+
+.intro-container{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  gap: 0.5em;
+  border-radius: 0.3em;
+  padding: 1em;
+  animation: vertical-slide 1s ease-in-out forwards;
+}
+
+#game-start{
+  background: black;
+  color: white;
+  font-size: 1.3rem;
+  border-radius: 0.3em;
+  font-weight: 600;
+}
+
+@keyframes vertical-slide {
+  from{
+    opacity: 0;
+    transform:translateY(80px);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateY(none);
+  }
 }
 
 .lives {
@@ -37,11 +97,6 @@ span.concealed {
   align-items: flex-end;
   font-size: 1.5rem;
   gap: 1em;
-}
-
-.keyboard-row {
-  display: flex;
-  justify-content: center;
 }
 
 .hidden {

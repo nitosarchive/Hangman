@@ -6,11 +6,12 @@ let randWord;
 const gameStart = document.getElementById("game-start");
 const restart = document.getElementById("restart");
 let hearts;
-
+const alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
 function fetchGame (){
   randWord = words[Math.floor(Math.random() * words.length)];
-  gameStart.classList.add("hidden")
+  document.querySelector(".intro-container").classList.add("hidden");
+  document.querySelector(".game-container").classList.remove("hidden");
   randWord = randWord.split("");
 
   let array = randWord.map((value) => {
@@ -21,7 +22,9 @@ function fetchGame (){
     hearts.remove();
   })
 
-  if(!hearts){
+  console.log(hearts)
+
+  if(hearts === undefined){
     for (let i=0; i<3; i++) { 
     const heartImg = document.createElement("img");
     heartImg.src = "./imgs/heart-png-38780.png";
@@ -40,6 +43,8 @@ restart.addEventListener("click", fetchGame);
 
 
 document.addEventListener("keyup", (e) => {
+
+  if (!alphabet.includes(e.key)) return;
   letterContainer.querySelectorAll("span").forEach((word) => {
     if (word.id === e.key) {
       word.classList.remove("concealed");
