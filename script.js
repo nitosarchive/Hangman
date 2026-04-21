@@ -43,7 +43,20 @@ restart.addEventListener("click", fetchGame);
 
 document.addEventListener("keyup", (e) => {
 
+  
   if (!alphabet.includes(e.key)) return;
+
+
+   if (!randWord.includes(e.key)) {
+    hearts = document.querySelector(".heart");
+  
+    
+    hearts.remove();
+    if (!hearts){
+      console.log("finished")
+    };
+  } 
+
   letterContainer.querySelectorAll("span").forEach((word) => {
     if (word.id === e.key) {
       word.classList.remove("concealed");
@@ -54,13 +67,7 @@ document.addEventListener("keyup", (e) => {
     }
   });
 
-  if (!randWord.includes(e.key)) {
-    hearts = document.querySelector(".heart");
-  
-    if (!hearts) return;
-    hearts.remove();
  
-  }
 });
 
 
