@@ -85,13 +85,13 @@ button{
   max-width: 30px;
 }
 
-span.concealed {
+.letter.concealed {
   width: 20px;
   height: 3px;
   background: grey;
 }
 
-span:not(.concealed){
+.letter:not(.concealed){
   text-transform: uppercase;
   background: rgba(128, 128, 128, 0.288);
   padding: 0.3em;
@@ -103,6 +103,14 @@ span:not(.concealed){
   margin-block-end: 1em;
   align-items: flex-end;
   font-size: 1.5rem;
+  gap: 1em;
+}
+
+.game-container{
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 1em;
 }
 
