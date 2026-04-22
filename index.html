@@ -8,14 +8,22 @@
     <title>Hangman</title>
   </head>
   <body>
+    <div class="intro-container">
+      <h1>Welcome <br>To <br>Hangman</h1>
+      <label for="game-start">Tap to play</label>
+      <button id="game-start">Start game</button>
+    </div>
     <span id="score"></span>
-    <div class="container">
+    <div class="game-container hidden">
       <div id="letter-box" class="letter-container"></div>
       <div class="lives">
-        <img src="./imgs/heart-png-38780.png" alt="heart" class="heart" />
-        <img src="./imgs/heart-png-38780.png" alt="heart" class="heart" />
-        <img src="./imgs/heart-png-38780.png" alt="heart" class="heart" />
+        
       </div>
+      <button id="restart">Restart</button>
+    </div>
+    <div class="hidden game-over-container">
+      <span>You lost</span>
+      <button id="reset">Try again</button>
     </div>
   </body>
 </html>
