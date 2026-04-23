@@ -6,22 +6,19 @@
   box-sizing: border-box;
 }
 
-@font-face{
+@font-face {
   font-family: "Rubik";
   src: url("./Rubik/Rubik-VariableFont_wght.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
 }
 
-@font-face{
+@font-face {
   font-family: "Rubik";
   src: url("./Rubik/Rubik-VariableFont_wght.ttf") format("truetype");
   font-style: normal;
   font-weight: 600;
 }
-
-
-
 
 body {
   display: flex;
@@ -31,19 +28,18 @@ body {
   align-items: center;
 }
 
-h1{
+h1 {
   font-weight: 600;
 }
 
-
-button{
+button {
   font: inherit;
   border: none;
-  background : none;
+  background: none;
   cursor: pointer;
 }
 
-.intro-container{
+.intro-container {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -54,7 +50,7 @@ button{
   animation: vertical-slide 1s ease-in-out forwards;
 }
 
-#game-start{
+#game-start {
   background: black;
   color: white;
   font-size: 1.3rem;
@@ -62,13 +58,21 @@ button{
   font-weight: 600;
 }
 
+#restart {
+  background: skyblue;
+  padding-inline: 1em;
+  padding-block: 0.4em;
+  border-radius: 0.2em;
+  outline: none;
+}
+
 @keyframes vertical-slide {
-  from{
+  from {
     opacity: 0;
-    transform:translateY(80px);
+    transform: translateY(80px);
   }
 
-  to{
+  to {
     opacity: 1;
     transform: translateY(none);
   }
@@ -91,7 +95,7 @@ button{
   background: grey;
 }
 
-.letter:not(.concealed){
+.letter:not(.concealed) {
   text-transform: uppercase;
   background: rgba(128, 128, 128, 0.288);
   padding: 0.3em;
@@ -106,7 +110,7 @@ button{
   gap: 1em;
 }
 
-.game-container{
+.game-container {
   min-width: 100%;
   display: flex;
   flex-direction: column;
