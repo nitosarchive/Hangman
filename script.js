@@ -9,24 +9,25 @@ const alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p
 const score = document.getElementById("score")
 let lastKeyCodes;
 let selectedWord;
+let randWord
 
 
-function fetchGame (){
-  fetch('./words.json').then(response => response.json()).then(words => {
+fetch('./words.json').then(response => response.json()).then(words => {
   selectedWord = words
 })
 
+function fetchGame (){
+  
   document.querySelector(".intro-container").classList.add("hidden");
   document.querySelector(".game-container").classList.remove("hidden");
 
   
-  selectedWord = selectedWord[Math.floor(Math.random() * selectedWord.length)]
-  
-  selectedWord = selectedWord.split("");
+  randWord = selectedWord[Math.floor(Math.random() * selectedWord.length)]
+  randWord = randWord.split("");
   scoreTally = 0;
   lastKeyCodes = [];
   score.innerText = 0;
-  let array = selectedWord.map((value) => {
+  let array = randWord.map((value) => {
     return `<span id="${value}" class="concealed letter" ></span>`;
   });
 
@@ -57,7 +58,7 @@ document.addEventListener("keyup", (e) => {
   if (lastKeyCodes.includes(e.keyCode)) return;
 
   lastKeyCodes.push(e.keyCode);
-  if (!selectedWord.includes(e.key)) {
+  if (!randWord.includes(e.key)) {
     hearts = document.querySelector(".heart");
     if (!hearts) return;
     hearts.remove();
